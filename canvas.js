@@ -10,8 +10,9 @@ window.addEventListener('load', () => {
   let painting = false;
 
   // start and end position
-  function startPosition() {
+  function startPosition(e) {
     painting = true;
+    draw(e);
   }
   function endPosition() {
     painting = false;
@@ -21,7 +22,7 @@ window.addEventListener('load', () => {
   // draw
   function draw(e) {
     if (!painting) return;
-    ctx.lineWidth = 10;
+    ctx.lineWidth = 15;
     ctx.lineCap = 'round';
 
     ctx.lineTo(e.clientX, e.clientY);
