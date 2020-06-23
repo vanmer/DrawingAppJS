@@ -15,8 +15,10 @@ window.addEventListener('load', () => {
   }
   function endPosition() {
     painting = false;
+    ctx.beginPath();
   }
 
+  // draw
   function draw(e) {
     if (!painting) return;
     ctx.lineWidth = 10;
@@ -24,7 +26,8 @@ window.addEventListener('load', () => {
 
     ctx.lineTo(e.clientX, e.clientY);
     ctx.stroke();
-    
+    ctx.beginPath();
+    ctx.moveTo(e.clientX, e.clientY);
   }
 
 
